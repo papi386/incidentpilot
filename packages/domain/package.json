@@ -9,7 +9,7 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "typescript": "^7",
     "vitest": "^4"
   }
 }
