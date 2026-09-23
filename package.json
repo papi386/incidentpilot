@@ -22,7 +22,7 @@
     "agent:live": "npm run agent:live -w @incidentpilot/evals --",
     "stress:self-test": "npm run stress:self-test -w @incidentpilot/evals -- --no-write",
     "stress:live": "npm run stress:live -w @incidentpilot/evals --",
-    "verify": "npm run security:workflows && npm run security:workflows:test && npm run typecheck && npm test && npm run test:integration --workspaces --if-present && npm run eval:self-test && npm run stress:self-test && npm run security:deps",
+    "verify": "npm run cf:types && npm run security:workflows && npm run security:workflows:test && npm run typecheck && npm test && npm run test:integration --workspaces --if-present && npm run eval:self-test && npm run stress:self-test && npm run security:deps",
     "security:workflows": "node scripts/Check-WorkflowSecurity.mjs",
     "security:workflows:test": "node scripts/Test-WorkflowSecurityPolicy.mjs"
   },
