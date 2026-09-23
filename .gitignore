@@ -1,0 +1,19 @@
+node_modules/
+.wrangler/
+.dev.vars
+.dev.vars.*
+!apps/control-plane/.dev.vars.example
+.env
+.env.*
+!.env.example
+worker-configuration.d.ts
+coverage/
+dist/
+# Generated local test/evaluation output. Keep reproducible summaries in docs,
+# not machine-specific runs or Miniflare state.
+.tmp/
+artifacts/
+.DS_Store
+*.log
+*.pem
+apps/control-plane/.github-app-private-key.b64

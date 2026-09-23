@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "types": [
+      "./worker-configuration.d.ts",
+      "vitest/globals",
+      "@cloudflare/vitest-plugin/types"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts",
+    "test-integration/**/*.ts",
+    "vitest.integration.config.ts",
+    "worker-configuration.d.ts"
+  ]
+}

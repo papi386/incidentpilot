@@ -1,0 +1,37 @@
+{
+  "name": "incidentpilot",
+  "private": true,
+  "version": "0.3.3",
+  "packageManager": "npm@11.19.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @incidentpilot/control-plane",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "cf:types": "npm run cf:types -w @incidentpilot/control-plane",
+    "db:migrate:local": "npm run db:migrate:local -w @incidentpilot/control-plane",
+    "db:migrate:remote": "npm run db:migrate:remote -w @incidentpilot/control-plane",
+    "deploy": "npm run deploy -w @incidentpilot/control-plane",
+    "security:deps": "npm audit --audit-level=high",
+    "eval:self-test": "npm run eval:self-test -w @incidentpilot/evals -- --no-write",
+    "eval:live": "npm run eval:live -w @incidentpilot/evals --",
+    "agent:demo": "npm run agent:demo -w @incidentpilot/evals --",
+    "agent:live": "npm run agent:live -w @incidentpilot/evals --",
+    "stress:self-test": "npm run stress:self-test -w @incidentpilot/evals -- --no-write",
+    "stress:live": "npm run stress:live -w @incidentpilot/evals --",
+    "verify": "npm run security:workflows && npm run security:workflows:test && npm run typecheck && npm test && npm run test:integration --workspaces --if-present && npm run eval:self-test && npm run stress:self-test && npm run security:deps",
+    "security:workflows": "node scripts/Check-WorkflowSecurity.mjs",
+    "security:workflows:test": "node scripts/Test-WorkflowSecurityPolicy.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@msw/cloudflare": "0.0.1",
+    "msw": "2.15.0",
+    "yaml": "^2.8.1"
+  }
+}

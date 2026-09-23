@@ -1,0 +1,6 @@
+# Copy to .dev.vars. Never commit real values.
+GITHUB_WEBHOOK_SECRET=replace-with-long-random-secret
+GITHUB_APP_CLIENT_SECRET=replace-with-github-app-client-secret
+GITHUB_APP_PRIVATE_KEY_B64=REPLACE_WITH_BASE64_PKCS8_PRIVATE_KEY
+# Exactly 32 random bytes, base64 encoded. Generate with scripts/Generate-Secrets.ps1.
+EVIDENCE_ENCRYPTION_KEY_B64=REPLACE_WITH_32_BYTE_BASE64_KEY

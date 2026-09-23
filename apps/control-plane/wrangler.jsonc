@@ -1,0 +1,38 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "incidentpilot-control-plane",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-10",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+   "APP_BASE_URL": "https://incidentpilot-control-plane.incidentpilot-control-plane.workers.dev",
+    "EVIDENCE_ENCRYPTION_KEY_VERSION": "v1",
+    "GITHUB_APP_CLIENT_ID": "Iv23lin0gTrXuZbFj30Z",
+    "GITHUB_APP_SLUG": "incidentpilot-dev"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "incidentpilot",
+      "database_id": "e2d0fe1c-a9e2-4e2c-8221-447637a6c4af",
+      "migrations_dir": "../../migrations"
+    }
+  ],
+  "workflows": [
+    {
+      "binding": "INCIDENT_WORKFLOW",
+      "name": "incidentpilot-incident-workflow",
+      "class_name": "IncidentWorkflow"
+    }
+  ],
+  "secrets": {
+    "required": [
+      "GITHUB_WEBHOOK_SECRET",
+      "GITHUB_APP_CLIENT_SECRET",
+      "GITHUB_APP_PRIVATE_KEY_B64",
+      "EVIDENCE_ENCRYPTION_KEY_B64"
+    ]
+  }
+}

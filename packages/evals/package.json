@@ -1,0 +1,25 @@
+{
+  "name": "@incidentpilot/evals",
+  "version": "0.3.3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "eval:self-test": "tsx src/cli.ts --provider scripted --gate-security",
+    "eval:live": "tsx src/cli.ts --provider openai-compatible",
+    "agent:demo": "tsx src/agent-cli.ts --provider scripted",
+    "agent:live": "tsx src/agent-cli.ts --provider openai-compatible",
+    "stress:self-test": "tsx src/stress-cli.ts --provider scripted",
+    "stress:live": "tsx src/stress-cli.ts --provider openai-compatible"
+  },
+  "dependencies": {
+    "@incidentpilot/domain": "0.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "tsx": "^4.20.5",
+    "typescript": "^5",
+    "vitest": "^4"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Customer",
+  "fields": {
+    "id": "string",
+    "name": "string",
+    "taxRegion": "string"
+  }
+}
