@@ -17,7 +17,7 @@
     "@incidentpilot/domain": "0.3.3"
   },
   "devDependencies": {
-    "@types/node": "^24",
+    "@types/node": "^26",
     "tsx": "^4.20.5",
     "typescript": "^5",
     "vitest": "^4"
